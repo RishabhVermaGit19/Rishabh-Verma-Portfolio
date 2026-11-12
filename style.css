@@ -1,0 +1,188 @@
+/* =========================================================
+   style.css — YOUR custom styles.
+   Bootstrap is loaded first (see the <head> of each page),
+   then this file runs and overrides it. Keep this file small:
+   only put things here that Bootstrap can't do for you.
+   ========================================================= */
+
+/* ---------- 1. YOUR COLOURS (change them here, once) ---------- */
+:root {
+  --bg: #131313;
+  --text: #efefef;
+  --soft: #cfcfcf;
+  --muted: #a0a0a0;
+  --lime: #ddff3c;
+  --line: #2c2c2c;
+}
+
+/* ---------- 2. BASE ---------- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: var(--lime); text-decoration: none; }
+a:hover { color: var(--lime); text-decoration: underline; }
+
+/* ---------- 3. NAVBAR (Bootstrap's navbar, recoloured) ---------- */
+.navbar-brand {
+  color: var(--text);
+  font-weight: 800;
+}
+.navbar-brand:hover { color: var(--text); text-decoration: none; }
+
+.navbar .nav-link {
+  color: var(--text);
+  font-family: monospace;
+  font-size: 14px;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--lime);
+  text-decoration: none;
+}
+
+/* ---------- 4. HOME PAGE ---------- */
+/* On the home page the navbar floats on top of the hero */
+.home .navbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 2;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 130px 12% 0;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 9vw;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.hero h1 .dot { color: var(--lime); }
+
+.hero .intro {
+  position: absolute;
+  left: 54%;
+  bottom: 80px;
+  max-width: 380px;
+  border-left: 2px solid var(--lime);
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* The lime triangle at the bottom of the hero */
+.wedge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85%;
+  height: 40px;
+  background: var(--lime);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* ---------- 5. INNER PAGES ---------- */
+main h1 { font-size: 2rem; line-height: 1.25; letter-spacing: -0.02em; }
+main h1 span { color: var(--lime); }
+
+main h2 {
+  font-size: 1.6rem;
+  margin: 64px 0 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+main h2:first-of-type { margin-top: 40px; }
+
+main h3 { font-size: 1.1rem; margin: 24px 0 4px; }
+main p { color: var(--soft); margin-bottom: 14px; }
+main ul { padding-left: 20px; margin-bottom: 14px; }
+main li { margin-bottom: 6px; }
+main li::marker { color: var(--lime); }
+
+/* Lists made of items with a title + text (uses Bootstrap's list-unstyled) */
+main .items { padding: 0; }
+main .items li { margin-bottom: 28px; }
+main .items h3 { margin-top: 0; }
+
+.tags { color: var(--muted); font-family: monospace; font-size: 14px; }
+.note { color: var(--muted); font-size: 15px; }
+
+/* Round profile photo (Bootstrap's rounded-circle does the circle) */
+.portrait {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--lime);
+}
+
+/* ---------- 6. BOOTSTRAP BUTTONS, RECOLOURED ---------- */
+/* Use it like:  <a class="btn btn-lime rounded-pill"> */
+.btn-lime {
+  --bs-btn-color: var(--lime);
+  --bs-btn-border-color: var(--lime);
+  --bs-btn-hover-color: #131313;
+  --bs-btn-hover-bg: var(--lime);
+  --bs-btn-hover-border-color: var(--lime);
+  --bs-btn-active-color: #131313;
+  --bs-btn-active-bg: var(--lime);
+  --bs-btn-active-border-color: var(--lime);
+}
+
+/* ---------- 7. BOOTSTRAP CARDS, RECOLOURED (projects page) ---------- */
+.card {
+  --bs-card-bg: #1c1c1c;
+  --bs-card-border-color: var(--line);
+  --bs-card-color: var(--text);
+}
+.card h3 { margin: 0 0 8px; }
+.card p:last-child { margin-bottom: 0; }
+
+/* ---------- 8. FOOTER ---------- */
+footer {
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- 9. MOBILE ---------- */
+/* Bootstrap already handles most of mobile. Only the custom bits are here. */
+@media (max-width: 700px) {
+  .hero { padding: 110px 20px 90px; min-height: 100vh; }
+  .hero h1 { font-size: 17vw; }
+  .hero h1 .line { display: block; }
+  .hero .intro { position: static; margin-top: 40px; }
+  .wedge { width: 100%; }
+
+  main h1 { font-size: 1.6rem; }
+}
+
+/* Give the opened mobile menu a background on the home page */
+@media (max-width: 575.98px) {
+  .home .navbar-collapse {
+    background: #1c1c1c;
+    border: 1px solid var(--line);
+    padding: 12px 20px;
+    margin-top: 10px;
+  }
+}
