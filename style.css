@@ -1,11 +1,4 @@
-/* =========================================================
-   style.css — YOUR custom styles.
-   Bootstrap is loaded first (see the <head> of each page),
-   then this file runs and overrides it. Keep this file small:
-   only put things here that Bootstrap can't do for you.
-   ========================================================= */
-
-/* ---------- 1. YOUR COLOURS (change them here, once) ---------- */
+/* ---------- 1. Colours ---------- */
 :root {
   --bg: #131313;
   --text: #efefef;
@@ -137,7 +130,6 @@ main .items h3 { margin-top: 0; }
 }
 
 /* ---------- 6. BOOTSTRAP BUTTONS, RECOLOURED ---------- */
-/* Use it like:  <a class="btn btn-lime rounded-pill"> */
 .btn-lime {
   --bs-btn-color: var(--lime);
   --bs-btn-border-color: var(--lime);
@@ -166,7 +158,6 @@ footer {
 }
 
 /* ---------- 9. MOBILE ---------- */
-/* Bootstrap already handles most of mobile. Only the custom bits are here. */
 @media (max-width: 700px) {
   .hero { padding: 110px 20px 90px; min-height: 100vh; }
   .hero h1 { font-size: 17vw; }
